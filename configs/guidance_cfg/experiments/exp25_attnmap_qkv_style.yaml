@@ -1,0 +1,115 @@
+scheduler_type: ddim_50_eps
+inversion_type: dummy
+model_name: stable-diffusion-v1-4
+pipeline_type: ours
+start_latent: inversion
+verbose: false
+edit_types: stylisation
+apply_adain: false
+adain_start_ix: 0
+adain_end_ix: 0
+guiders:
+- name: cfg
+  g_scale: 0.0
+  kwargs:
+    is_source_guidance: false
+- name: self_attn_map_qkv_l2
+  g_scale:
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  kwargs:
+    attn_map_scale: 1000000.0
+    attn_map_iter_start: 0
+    attn_map_iter_end: 35
+    q_scale: 0.0
+    kv_scale: 75.0
+    qkv_iter_start: 35
+    qkv_iter_end: 50
+    layers_num:
+      down_self:
+        - 0
+        - 9
+      mid_self:
+        - 0
+        - 1
+      up_self:
+        - 0
+        - 9
+      down_q:
+        - 0
+        - 9
+      mid_q:
+        - 0
+        - 1
+      up_q:
+        - 0
+        - 9
+      down_k:
+        - 0
+        - 0
+      mid_k:
+        - 0
+        - 0
+      up_k:
+        - 0
+        - 9
+      down_v:
+        - 0
+        - 0
+      mid_v:
+        - 0
+        - 0
+      up_v:
+        - 0
+        - 9
+noise_rescaling_setup:
+  type: identity_rescaler
+  init_setup: 1.0

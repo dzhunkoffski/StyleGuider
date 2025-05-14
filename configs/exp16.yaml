@@ -1,0 +1,31 @@
+# сначала гайдинг на контент на последних итерациях на стиль
+
+run_name: ???
+hydra:
+  mode: ${hydra.mode}
+  run:
+    dir: ./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}=${run_name}
+  sweep:
+    dir: ./hydra_multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}=${run_name}
+    subdir: ${hydra.job.num}
+
+device: cuda:0
+
+defaults:
+  - guidance_cfg: exp16_latent_style
+  - samples: empty_prompt
+
+scheduler_name: ddim_50_eps
+model_name: stable-diffusion-v1-4
+
+exp_configs:
+  content_guider_start: 0
+  content_guider_end: 50
+  content_guider_scale: 7500.0
+  style_guider_start: 30
+  style_guider_end: 50
+  style_guider_scale: 500000.0
+  do_others_rescaling: true
+  others_rescaling_iter_start: 30
+  others_rescaling_iter_end: 50
+  others_rescaling_factor: 2

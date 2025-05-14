@@ -1,0 +1,98 @@
+scheduler_type: ddim_50_eps
+inversion_type: dummy
+model_name: stable-diffusion-v1-4
+pipeline_type: ours
+start_latent: inversion
+verbose: false
+edit_types: stylisation
+apply_adain: false
+adain_start_ix: 0
+adain_end_ix: 0
+guiders:
+- name: cfg
+  g_scale: 0.0
+  kwargs:
+    is_source_guidance: false
+- name: self_attn_map_v_l2
+  g_scale:
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  kwargs:
+    attn_map_scale: 1000000.0
+    attn_map_iter_start: 0
+    attn_map_iter_end: 50
+    v_scale: 10000.0
+    v_iter_start: 30
+    v_iter_end: 50
+    save_data_dict: false
+    save_data_dir: 'bruh'
+    layers_num:
+      down_self:
+        - 0
+        - 9
+      mid_self:
+        - 0
+        - 1
+      up_self:
+        - 0
+        - 9
+      down_v:
+        - 0
+        - 0
+      mid_v:
+        - 0
+        - 0
+      up_v:
+        - 7
+        - 9
+noise_rescaling_setup:
+  type: identity_rescaler
+  init_setup: 1.0

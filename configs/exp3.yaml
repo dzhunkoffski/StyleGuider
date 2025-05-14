@@ -1,0 +1,24 @@
+run_name: ???
+hydra:
+  mode: ${hydra.mode}
+  run:
+    dir: ./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}=${run_name}
+  sweep:
+    dir: ./hydra_multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}=${run_name}
+    subdir: ${hydra.job.num}
+
+device: cuda:0
+
+defaults:
+  - guidance_cfg: exp5_ctrl_style
+  - samples: empty_prompt
+
+scheduler_name: ddim_50_eps
+model_name: stable-diffusion-v1-4
+
+exp_configs:
+  style_guider_ix: 1
+  style_guider_scale_multiplier: 50.0
+  style_guider_scale_default: 1.0
+  style_guider_iter_start: 0
+  style_guider_scale_n_iters: 25
