@@ -12,7 +12,11 @@ While most of the Style-Transfer methods require additional optimization steps t
 
 ## Getting Started
 ### Prerequisites
+To run the code you need to have conda environment manager. Project was tested on NVIDIA Tesla V100 32 GB.
 ### Installation
+```bash
+# TODO:
+```
 
 ## Usage
 ### Run demo

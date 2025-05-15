@@ -1,5 +1,3 @@
-# сначала гайдинг на контент на последних итерациях на стиль
-
 run_name: ???
 hydra:
   mode: ${hydra.mode}
@@ -12,8 +10,8 @@ hydra:
 device: cuda:0
 
 defaults:
-  - guidance_cfg: exp16_latent_style
-  - samples: empty_prompt
+  - guidance_cfg: exp22_vgg_style
+  - samples: demo_samples
 
 scheduler_name: ddim_50_eps
 model_name: stable-diffusion-v1-4
@@ -21,11 +19,11 @@ model_name: stable-diffusion-v1-4
 exp_configs:
   content_guider_start: 0
   content_guider_end: 50
-  content_guider_scale: 7500.0
+  content_guider_scale: 100000
   style_guider_start: 30
   style_guider_end: 50
   style_guider_scale: 500000.0
   do_others_rescaling: true
   others_rescaling_iter_start: 30
   others_rescaling_iter_end: 50
-  others_rescaling_factor: 2
+  others_rescaling_factor: 2.0

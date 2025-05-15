@@ -6,8 +6,8 @@ start_latent: inversion
 verbose: false
 edit_types: stylisation
 apply_adain: false
-adain_start_ix: 0
-adain_end_ix: 0
+adain_start_ix: 40
+adain_end_ix: 50
 guiders:
 - name: cfg
   g_scale: 0.0
@@ -66,7 +66,7 @@ guiders:
   - 0.0
   - 0.0
   kwargs:
-    attn_map_scale: 1000000.0
+    attn_map_scale: 3000000
     attn_map_iter_start: 0
     attn_map_iter_end: 50
     v_scale: 10000.0

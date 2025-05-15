@@ -9,8 +9,8 @@ hydra:
 
 device: cuda:1
 defaults:
-  - guidance_cfg: exp17_adain_colorisation
-  - samples: empty_prompt
+  - guidance_cfg: exp24_attnmap_v_style
+  - samples: demo_samples
 
 scheduler_name: ddim_50_eps
 model_name: stable-diffusion-v1-4
