@@ -116,7 +116,6 @@ def run_experiment(cfg: DictConfig):
             g_config['guiders'][2]['g_scale'][guiding_ix] = cfg['exp_configs']['style_guider_scale']
         log.info(f'Scales for style guider:\n{g_config["guiders"][2]["g_scale"]}')
 
-        os.makedirs(os.path.join(run_path, f'{cnt_name}___{sty_name}'), exist_ok=True)
         res = generate_single(
             edit_cfg=g_config, model=model,
             root_path=os.path.join(run_path, f'{cnt_name}___{sty_name}'),

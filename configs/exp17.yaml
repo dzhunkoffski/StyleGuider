@@ -7,9 +7,9 @@ hydra:
     dir: ./hydra_multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}___${run_name}
     subdir: ${hydra.job.num}
 
-device: cuda:1
+device: cuda:0
 defaults:
-  - guidance_cfg: exp24_attnmap_v_style
+  - guidance_cfg: attnmap_v_style
   - samples: demo_samples
 
 scheduler_name: ddim_50_eps

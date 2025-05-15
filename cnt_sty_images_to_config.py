@@ -25,7 +25,7 @@ def run(cfg):
                 'sty_img_path': os.path.relpath(sty_p), 'sty_prompt': '', 'edit_prompt': ''
             })
     
-    with open(os.path.join(cfg.save_to, f'style_bench.yaml'), 'w') as fd:
+    with open(os.path.join(cfg.save_to, f'{cfg.name}.yaml'), 'w') as fd:
         yaml.dump(samples, fd, default_flow_style=False)
 
 if __name__ == '__main__':

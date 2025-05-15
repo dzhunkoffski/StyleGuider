@@ -68,14 +68,7 @@ def main(opt):
     print(f'------> Will run on device {device}')
 
     output_imgs = []
-    output_imgs += list(glob.glob('outputs/2025-05-03/20-20-49___attn_v_batch1/output_imgs/**.png'))
-    output_imgs += list(glob.glob('outputs/2025-05-03/20-21-28___attn_v_batch2/output_imgs/**.png'))
-    output_imgs += list(glob.glob('outputs/2025-05-04/06-57-09___attn_v_batch2/output_imgs/**.png'))
-    output_imgs += list(glob.glob('outputs/2025-05-04/06-57-22___attn_v_batch1/output_imgs/**.png'))
-    output_imgs += list(glob.glob('outputs/2025-05-04/22-20-20___attn_v_batch1/output_imgs/**.png'))
-    output_imgs += list(glob.glob('outputs/2025-05-05/08-58-53___attn_v_batch1/output_imgs/**.png'))
-    output_imgs += list(glob.glob('outputs/2025-05-05/23-08-11___attn_v_batch1/output_imgs/**.png'))
-    output_imgs += list(glob.glob('outputs/2025-05-06/09-53-30___attn_v_batch1/output_imgs/**.png'))
+    output_imgs += glob.glob(os.path.join(opt.generated, '**.png'))
     true_output_imgs = []
     for oimg in output_imgs:
         if 'panel___' not in oimg:
@@ -115,8 +108,9 @@ def main(opt):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--style', type=str)
+    parser.add_argument('--generated', type=str)
     parser.add_argument('--batch_size', type=int, default=16)
     parser.add_argument('--clip_id', type=str, default="openai/clip-vit-large-patch14")
-    parser.add_argument('--device', type=str, default='cuda:1')
+    parser.add_argument('--device', type=str, default='cuda:0')
     opt = parser.parse_args()
     main(opt)
