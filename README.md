@@ -22,6 +22,9 @@ conda activate sg_env
 ```
 
 ## Usage
+### Run Streamlit web application demo
+```bash
+```
 ### Run demo
 #### VGG Style Configuration (better content preservation, transfers only color and primitive stylisitc attributes)
 ```bash

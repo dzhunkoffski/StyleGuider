@@ -1,0 +1,4 @@
+device: cuda:1
+scheduler_name: ddim_50_eps
+model_name: stable-diffusion-v1-4
+tmp: .streamlit/tmp

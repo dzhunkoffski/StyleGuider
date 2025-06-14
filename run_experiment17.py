@@ -123,7 +123,7 @@ def run_experiment(cfg: DictConfig):
 
         # Prepare selfattn guider
         log.info(f'QKV guider: {g_config["guiders"][1]["name"]}')
-        for guiding_ix in range(cfg['exp_configs']['qkv_guider_start'], cfg['exp_configs']['qkv_guider_end']):
+        for guiding_ix in range(cfg['exp_configs']['qkv_guider_start'], cfg['exp_configs']['st.ses']):
             g_config['guiders'][1]['g_scale'][guiding_ix] = cfg['exp_configs']['qkv_guider_scale']
         log.info(f'Scales for qkv guider:\n{g_config["guiders"][1]["g_scale"]}')
 

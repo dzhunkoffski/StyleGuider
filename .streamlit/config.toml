@@ -1,0 +1,5 @@
+# More info about this file: https://docs.streamlit.io/develop/api-reference/configuration/config.toml
+
+[server]
+maxMessageSize = 1024
+maxUploadSize = 256
