@@ -1,0 +1,10 @@
+version: "3.4"
+
+services:
+  styleguider:
+    image: styleguider
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+     - 8501:8501

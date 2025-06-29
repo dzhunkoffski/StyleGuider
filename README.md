@@ -22,8 +22,14 @@ conda activate sg_env
 ```
 
 ## Usage
+### Run web application from docker container (optionally):
+```bash
+docker build -t styleguider_app .
+docker run -it -p 5000:5000 --gpus all
+```
 ### Run Streamlit web application demo
 ```bash
+streamlit run app.py
 ```
 ### Run demo
 #### VGG Style Configuration (better content preservation, transfers only color and primitive stylisitc attributes)
