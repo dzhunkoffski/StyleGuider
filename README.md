@@ -6,6 +6,8 @@
 
 >While most of the Style-Transfer methods require additional optimization steps to find embedding that represents the style of an image, which makes them computationally inefficient, this project proposes to use Diffusion Models with special energy functions alongside the Guidance Mechanism which allows control transfer of various stylistic attributes from one reference image while preserving content from another.
 
+Code for StyleGuider [https://www.hse.ru/en/ba/ami/students/diplomas/1046846550](https://www.hse.ru/en/ba/ami/students/diplomas/1046846550)
+
 ## Examples
 Left column - content images, middle column - style reference image, right column - results of an algorithm.
 ![example1](docs/panel___A%20honey%20jar%20and%20an%20orange___Neo-Figurative%20Art___04.png)
